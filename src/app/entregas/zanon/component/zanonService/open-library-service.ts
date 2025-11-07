@@ -21,6 +21,9 @@ export class OpenLibraryService {
       // "map" recibe el JSON y devuelve un nuevo objeto con las propiedades que nos interesan
       map(data => ({
         coverUrl: `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`,
+
+        // REVISAR LA DESCRIPCIÓN
+
         description: typeof data.description === 'string'
           ? data.description // Si la descripción es un texto, la devuelve tal cual
           : data.description?.value || 'Descripción no disponible' // Si es un objeto, o no existe, busca ".value", o muestra un mensaje por defecto

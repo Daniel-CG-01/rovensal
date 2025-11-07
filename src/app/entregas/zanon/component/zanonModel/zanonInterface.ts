@@ -5,5 +5,5 @@ export interface Libro {
     ISBN: string;
     Pages: number;
     coverUrl?: string;
-    description?: string;
+    // description?: string;
 }

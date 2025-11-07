@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { Libro } from '../zanonModel/zanonInterface';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogContent, MatDialogActions } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-datos-unrouted-component',
-  imports: [],
+  imports: [MatDialogContent, MatDialogActions],
   templateUrl: './datos-unrouted-component.html',
   styleUrl: './datos-unrouted-component.css',
+  standalone: true,
 })
 export class DatosUnroutedComponent {
 

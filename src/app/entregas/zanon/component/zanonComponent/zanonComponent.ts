@@ -32,10 +32,9 @@ export class ZanonComponent {
       switchMap((libros: Libro[]) => {
         const peticiones = libros.map(libro =>
 
-          // NORMALIZAR LOS ISBNs
-          // const nuevoISBN = libro.ISBN.replace(/[^0-9X]/gi, '');
-
-          this.oOpenLibraryService.obtenerInfoLibro(libro.ISBN).pipe (
+          // "(libro.ISBN || '').replace(/[^0-9X]/gi, '')" normaliza el ISBN del libro.
+          // Entonces, llama al servicio OpenLibraryService y devuelve un "Observable" que luego será procesado en el "pipe()"
+          this.oOpenLibraryService.obtenerInfoLibro((libro.ISBN || '').replace(/[^0-9X]/gi, '')).pipe (
             map(info => ({
               ...libro, // Conserva los datos del libro original
               coverUrl: info.coverUrl, // Añade la portada

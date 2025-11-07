@@ -1,30 +1,17 @@
-<div class="container p-3">
-    <div class="row">
-        <div class="col">
-            <h2>Información del libro</h2>
+<div class="dialog-container">
+    <h2>INFORMACIÓN DEL LIBRO</h2>
 
-            <table>
-                <tr>
-                    <th>Título</th>
-                    <td>{{ oLibro.Title }}</td>
-                </tr>
-                <tr>
-                    <th>Año de publicación</th>
-                    <td>{{ oLibro.Year }}</td>
-                </tr>
-                <tr>
-                    <th>Editorial</th>
-                    <td>{{ oLibro.Publisher }}</td>
-                </tr>
-                <tr>
-                    <th>ISBN</th>
-                    <td>{{ oLibro.ISBN }}</td>
-                </tr>
-                <tr>
-                    <th>Cantidad de páginas</th>
-                    <td>{{ oLibro.Pages }}</td>
-                </tr>
-            </table>
+    <mat-dialog-content>
+        <div>
+            <div>
+                <p><strong>Año de publicación: </strong>{{ oLibro.Year }}</p>
+                <p><strong>Editorial: </strong>{{ oLibro.Publisher }}</p>
+                <p><strong>ISBN: </strong>{{ oLibro.ISBN }}</p>
+                <p><strong>Cantidad de páginas: </strong>{{ oLibro.Pages }}</p>
+            </div>
         </div>
-    </div>
+
+        <!-- ¿DESCRIPCIÓN? -->
+        
+    </mat-dialog-content>
 </div>
