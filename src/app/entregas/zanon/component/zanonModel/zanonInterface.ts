@@ -4,4 +4,6 @@ export interface Libro {
     Publisher: string;
     ISBN: string;
     Pages: number;
+    coverUrl?: string;
+    description?: string;
 }

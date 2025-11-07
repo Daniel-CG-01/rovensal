@@ -1,11 +1,19 @@
 <h2>Entrega Zanon</h2>
 
-<h3>Listado de libros de Stephen King</h3>
-            
-@for (item of libros; track $index) {
-    <div>
-        <h5>{{ item.Title }}</h5>
-        <button (click)="verInformacionLibro(item)">Ver información</button>
-        <hr>
+<div class="container mt-4">
+    <h3>Listado de libros de Stephen King</h3>
+
+    <div class="row">
+        @for (item of libros; track $index) {
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card m.2 shadow-sm" style="width: 18rem;">
+                    <img [src]="item.coverUrl" class="card-img-top" alt="{{ item.Title }}">
+                    <div class="card-body text-center">
+                        <h5>{{ item.Title }}</h5>
+                        <button (click)="verInformacionLibro(item)">Ver información</button>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-}
+</div>
