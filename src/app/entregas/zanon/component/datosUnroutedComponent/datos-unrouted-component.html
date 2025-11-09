@@ -1,35 +1,33 @@
 <mat-dialog-content>
-    <h2>INFORMACIÓN DEL POKÉMON</h2>
+    <h2>Información de {{ oPokemon.name }}</h2>
 
-    <div class="detalles">
-        <h3>Altura:</h3>
-        <p>{{ oPokemon.height }}</p>
+    <div class="text-center mb-3">
+        <img [src]="oPokemon.imageUrl" alt="{{ oPokemon.name }}"
+             class="img-fluid rounded-circle shadow" style="width: 150px; height: 150px; object-fit: contain;">
+    </div>
 
-        <h3>Peso:</h3>
-        <p>{{ oPokemon.weight }}</p>
-
-        <h3>Tipos:</h3>
-        <table>
-            <tr>
-                <th>#</th>
-                <th>Tipo</th>
-            </tr>
+    <table class="table table-striped table-hover table-bordered text-center">
+        <tr>
+            <th>Altura</th>
+            <td>{{ oPokemon.height }}</td>
+        </tr>
+        <tr>
+            <th>Peso</th>
+            <td>{{ oPokemon.weight }}</td>
+        </tr>
+        <tr>
+            <th>Tipos</th>
             @for (tipo of oPokemon.types; track $index) {
-                <td>{{ $index + 1 }}</td>
+                <td style="font-weight: bold;">{{ $index + 1 }}</td>
                 <td>{{ tipo }}</td>
             }
-        </table>
-
-        <h3>Habilidades:</h3>
-        <table>
-            <tr>
-                <th>#</th>
-                <th>Habilidad</th>
-            </tr>
+        </tr>
+        <tr>
+            <th>Habilidades</th>
             @for (habilidad of oPokemon.abilities; track $index) {
-                <td>{{ $index + 1 }}</td>
+                <td style="font-weight: bold;">{{ $index + 1 }}</td>
                 <td>{{ habilidad }}</td>
             }
-        </table>
-    </div>
+        </tr>
+    </table>
 </mat-dialog-content>

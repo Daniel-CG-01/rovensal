@@ -68,7 +68,7 @@ export class ZanonComponent {
   }
 
   // Se ejecuta cada ver que el usuario escribe algo en el buscador
-  filtroPokemons() {
+  filtroPokemon() {
 
     // Convierte todo el texto que el usuario escribe en el "input" a minúsculas, eliminándo además espacios al principio y al final
     const filtro = this.filtroNombre.trim().toLowerCase();

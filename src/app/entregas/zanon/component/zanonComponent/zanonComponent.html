@@ -4,7 +4,7 @@
     <h3>LISTADO de POKÉMONS</h3>
 
     <h4>Buscador: <input type="text" placeholder="Introduce el NOMBRE de un POKÉMON" 
-                         [(ngModel)]="filtroNombre" (input)="filtroPokemons()"></h4>
+                         [(ngModel)]="filtroNombre" (input)="filtroPokemon()"></h4>
 
     <div class="row">
         @for (item of paginasPokemon; track $index) {
